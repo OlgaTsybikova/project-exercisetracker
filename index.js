@@ -10,7 +10,7 @@ app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use("/api", userRouter);
+app.use("/api/users", userRouter);
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
