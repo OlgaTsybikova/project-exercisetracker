@@ -3,6 +3,8 @@ const app = express();
 const cors = require("cors");
 const connectDataBase = require("./database");
 const userRouter = require("./routers/userRouter");
+const debug = require("debug");
+const chalk = require("chalk");
 require("dotenv").config();
 
 app.use(cors());

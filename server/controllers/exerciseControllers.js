@@ -21,16 +21,12 @@ const createExercise = async (req, res, next) => {
       res.status(201).json({
         _id: user._id,
         username: user.username,
-        duration: newExercise.duration,
+        duration: Number(newExercise.duration),
         description: newExercise.description,
         date: new Date(newExercise.date).toDateString(),
       });
       console.log("Exercise has been created correctly");
     }
-    /*  await User.findOneAndUpdate(
-      { _id: userId },
-      { $push: { createdExercises: createExercise.id } }
-    ); */
   } catch (error) {
     error.customMessage = "Could not create the exercise";
     error.statusCode = 400;
